@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Emi Gonzalez</title>
-<meta name="description" content="Emi Gonzalez — co-founder of Duckbill. Harvard-educated, previously early-stage venture capital.">
+<meta name="description" content="Emi Gonzalez — co-founder of Duckbill. Harvard-trained scientist turned operator. Previously early-stage venture and founder of Checkmate Diabetes.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23f6f4ef'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' fill='%23a8543a' text-anchor='middle'%3EEG%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -128,10 +128,11 @@
   }
   .about-copy {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 56px;
     max-width: 1000px;
   }
+  .about-copy .col { display: grid; gap: 22px; align-content: start; }
   .about-copy p { margin: 0; text-wrap: pretty; }
   .about-copy p.lead {
     font-size: clamp(18px, 1.7vw, 24px);
@@ -143,6 +144,12 @@
     line-height: 1.62;
     color: var(--body);
   }
+  .about-copy p.closer {
+    font-size: clamp(16px, 1.4vw, 19px);
+    line-height: 1.55;
+    color: var(--ink);
+  }
+  .about-copy p.closer em { font-style: italic; }
 
   .duckbill {
     background: var(--dark);
@@ -152,7 +159,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: clamp(32px, 5vw, 80px);
-    align-items: end;
+    align-items: start;
     margin-bottom: 12vh;
   }
   .duckbill a { color: var(--dark-ink); }
@@ -178,6 +185,14 @@
     text-wrap: pretty;
   }
   .db-main p em { font-style: italic; font-weight: 400; }
+  .db-main p.db-note {
+    font-size: clamp(15px, 1.3vw, 18px);
+    line-height: 1.55;
+    color: var(--dark-body);
+    font-weight: 400;
+    letter-spacing: 0;
+    max-width: 46ch;
+  }
   .db-meta { display: grid; gap: 22px; font-family: var(--mono); }
   .db-stat { display: grid; gap: 8px; }
   .db-stat .label {
@@ -251,6 +266,44 @@
     max-width: 62ch;
     text-wrap: pretty;
   }
+  .t-row ul {
+    margin: 10px 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 8px;
+    max-width: 62ch;
+  }
+  .t-row li {
+    position: relative;
+    padding-left: 1.15em;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--body);
+  }
+  .t-row li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: var(--muted);
+  }
+
+  .next {
+    border-top: 1px solid var(--line);
+    padding: 56px 0 10vh;
+  }
+  .next-copy {
+    max-width: 720px;
+  }
+  .next-copy p {
+    margin: 0;
+    font-size: clamp(20px, 2vw, 28px);
+    line-height: 1.45;
+    font-weight: 300;
+    letter-spacing: -0.012em;
+    text-wrap: pretty;
+  }
+  .next-copy p em { font-style: italic; font-weight: 400; }
 
   footer {
     border-top: 1px solid var(--line);
@@ -284,6 +337,7 @@
 
   @media (max-width: 800px) {
     .split { grid-template-columns: 1fr; gap: 16px; }
+    .about-copy { grid-template-columns: 1fr; }
     .t-row { grid-template-columns: 1fr; gap: 10px; }
     .t-row .when { padding-top: 0; }
     .hero-copy { margin-left: 0; }
@@ -300,9 +354,9 @@
   </header>
 
   <section class="hero reveal">
-    <h1>Spent four years funding builders. Now I <em>build</em>.</h1>
+    <h1>Spent years founding and investing. Now I <em>build</em>.</h1>
     <div class="hero-copy">
-      <p>Harvard-educated, formerly early-stage venture capital, now building Duckbill — the reliability layer for AI agents.</p>
+      <p>Harvard-trained scientist turned operator. Co-founder of Duckbill, the infrastructure layer between agents and humans, previously early-stage venture, and before that, founder of a health-tech startup.</p>
       <div class="hero-links">
         <a href="https://www.getduckbill.com" target="_blank" rel="noopener">getduckbill.com →</a>
         <a class="quiet" href="https://www.linkedin.com/in/emi-gonzalez/" target="_blank" rel="noopener">LinkedIn ↗</a>
@@ -313,8 +367,14 @@
   <section class="about split reveal">
     <h2 class="kicker">About</h2>
     <div class="about-copy">
-      <p class="lead">I studied molecular and cellular biology at Harvard, graduating <em>cum laude</em>, and spent time as a research fellow at Harvard Medical School. While there, I founded Checkmate Diabetes, a venture-backed startup applying machine learning and behavioral psychology to diabetes management, which won first place in Harvard's i3 Innovation Challenge.</p>
-      <p class="follow">From 2019 to 2022, I was an investment partner at Joyance Partners, an early-stage fund investing at the intersection of delight, behavior change, and human wellbeing. That vantage point on a lot of other people's companies is a large part of why I went back to building one of my own.</p>
+      <div class="col">
+        <p class="lead">Across science, investing, and building, I’ve learned to turn ambiguity into decisions, and to <em>own</em> what happens next.</p>
+        <p class="follow">At Duckbill, I’ve led a 200-person org spanning product, operations, finance, legal, IT, and marketplace through $37M raised — building the strategy, owning the P&amp;L, and rebuilding a human-first product into an AI-first one.</p>
+      </div>
+      <div class="col">
+        <p class="follow">Before that, I invested at Joyance Partners in delightful moments at the intersection of health, wellness, and tech, and before that, I founded Checkmate Diabetes, a venture-backed digital health platform. I started as a scientist with a B.A. in Molecular &amp; Cellular Biology from Harvard, <em>cum laude</em>, with a research fellowship at Harvard Medical School and two peer-reviewed publications (<em>Nature Communications</em>, <em>Circulation Research</em>).</p>
+        <p class="closer">A decade of founding, investing, and operating has taught me the best leaders are built on the battlefield. My career reflects that bet.</p>
+      </div>
     </div>
   </section>
 
@@ -322,9 +382,10 @@
     <div class="db-main">
       <div class="db-head">
         <span class="name">Duckbill</span>
-        <span>Est. 2022</span>
+        <span>Co-founder, 2022–Present</span>
       </div>
-      <p>Pairing AI orchestration with expert humans so real-world tasks actually get <em>finished</em> — not just planned.</p>
+      <p>Building the reliability layer for AI agents: pairing AI orchestration with expert humans so real-world tasks actually get <em>finished</em>, not just planned.</p>
+      <p class="db-note">I own the company’s operating infrastructure — ops, finance, legal, IT, and product — across a 200+ person team, and led the rebuild from human-first to AI-first, taking gross margin from wildly unprofitable to profitable.</p>
     </div>
     <div class="db-meta">
       <div class="db-stat">
@@ -343,11 +404,16 @@
     <h2 class="kicker">Background</h2>
     <div class="timeline">
       <div class="t-row">
-        <span class="when">2022 — Present</span>
+        <span class="when">May 2022 – Present</span>
         <div class="what">
-          <h3>Co-founder, Duckbill</h3>
+          <h3>Co-founder</h3>
           <span class="org">Duckbill</span>
-          <p>AI-and-human personal assistant. Building the reliability layer for AI agents.</p>
+          <p>Building the reliability layer for AI agents.</p>
+          <ul>
+            <li>Own the company’s operating infrastructure — ops, finance, legal, IT, and product — across a 200+ person team and $37M raised</li>
+            <li>Rebuilt the product from human-first to AI-first, taking gross margin from wildly unprofitable to profitable</li>
+            <li>Own vendor and commercial negotiations end-to-end, including restructuring the company’s largest contracts and negotiating directly with C-suite counterparts</li>
+          </ul>
         </div>
       </div>
       <div class="t-row">
@@ -355,15 +421,24 @@
         <div class="what">
           <h3>Investment Partner</h3>
           <span class="org">Joyance Partners</span>
-          <p>Early-stage fund investing at the intersection of delight, behavior change, and human wellbeing.</p>
+          <p>Delightful moments at the intersection of health, wellness, and tech.</p>
+          <ul>
+            <li>Sourced, diligenced, and led investments across health, wellness, and consumer as a member of the investment committee</li>
+            <li>Portfolio includes Figur8 (acquired 2026), Elemind, Curie Co, Folia Health, AOA Dx, and Lazarus AI</li>
+            <li>Worked directly with founders post-investment as a thought partner on strategy and execution</li>
+          </ul>
         </div>
       </div>
       <div class="t-row">
         <span class="when">Nov 2016 – May 2019</span>
         <div class="what">
-          <h3>Founder, Checkmate Diabetes</h3>
-          <span class="org">Venture-backed digital health</span>
-          <p>Applied machine learning and behavioral psychology to diabetes management. Won first place in Harvard's i3 Innovation Challenge.</p>
+          <h3>Founder</h3>
+          <span class="org">Checkmate Diabetes</span>
+          <p>Venture-backed digital health platform for diabetes management.</p>
+          <ul>
+            <li>Founded a venture-backed digital health platform applying ML and behavioral psychology to help people with diabetes manage their disease</li>
+            <li>Won first place in Harvard’s i3 Innovation Challenge ($10K); filed a provisional patent for a mobile health adherence system</li>
+          </ul>
         </div>
       </div>
       <div class="t-row">
@@ -371,9 +446,19 @@
         <div class="what">
           <h3>B.A. Molecular &amp; Cellular Biology, Cum Laude</h3>
           <span class="org">Harvard University</span>
-          <p>Research fellow at Harvard Medical School, Richard Lee Lab, Harvard Stem Cell Institute.</p>
+          <ul>
+            <li>Research Fellow, Harvard Medical School (Richard Lee Lab, Harvard Stem Cell Institute)</li>
+            <li>Co-authored two peer-reviewed publications: <em>Nature Communications</em> and <em>Circulation Research</em></li>
+          </ul>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="next split reveal">
+    <h2 class="kicker">What’s next</h2>
+    <div class="next-copy">
+      <p>I’m spending time thinking about where AI changes the shape of a whole category, not just the workflow inside it — whether that means investing or starting a company in <em>verticalized AI</em>, health and wellness powered by real data, organizing the world’s messy real-world data, water purification, and reimagining education at scale, powered by AI.</p>
     </div>
   </section>
 
